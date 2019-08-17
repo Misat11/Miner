@@ -42,8 +42,8 @@ public class Mine {
 			return null;
 		}
 		String name = configMap.getString("name");
-		Location pos1 = configMap.getObject("pos1", Location.class);
-		Location pos2 = configMap.getObject("pos2", Location.class);
+		Location pos1 = (Location) configMap.get("pos1");
+		Location pos2 = (Location) configMap.get("pos2");
 		Mine mine = new Mine(name, pos1, pos2);
 		List<Map<String, Object>> listOfEntries = (List<Map<String, Object>>) configMap.getList("entries");
 		for (Map<String, Object> entry : listOfEntries) {
