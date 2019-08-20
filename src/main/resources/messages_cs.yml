@@ -25,7 +25,10 @@ block_already_exists: "§cBlok §e%x%§7;§e%y%§7;§e%z%§c nebylo možné při
 pos_selected: "§aPozice §e%position%§a nastavena na §e%x%§7;§e%y%§7;§e%z%§a!"
 mine_regen: "§aV dole §7%name%§a byly všechny suroviny znovu vygenerovány!"
 
+list_header: "Seznam dolů: "
+
 help_title: "Miner %version% - Nápověda"
+help_mine_list: "/mine list - §eSeznam existujících dolů"
 help_mine_pos1: "/mine pos1 - §eNastaví první pozici výběru"
 help_mine_pos2: "/mine pos2 - §eNastaví druhou pozici výběru"
 help_mine_add: "/mine add <jméno dulu> - §eVytvoří nový důl podle výběru"

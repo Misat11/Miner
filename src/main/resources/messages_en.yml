@@ -25,7 +25,10 @@ block_already_exists: "§cBlock §e%x%§7;§e%y%§7;§e%z%§c could not be added
 pos_selected: "§aPosition §e%position%§a set to §e%x%§7;§e%y%§7;§e%z%§a!"
 mine_regen: "§aIn mine §7%name%§a all blocks were regenerated!"
 
+list_header: "Mine list: "
+
 help_title: "Miner %version% - Help"
+help_mine_list: "/mine list - §eLists all mines"
 help_mine_pos1: "/mine pos1 - §eSets first position of selection"
 help_mine_pos2: "/mine pos2 - §eSets second position of selection"
 help_mine_add: "/mine add <name of mine> - §eCreates new mine"

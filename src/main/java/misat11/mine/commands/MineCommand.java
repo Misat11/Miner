@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -36,7 +37,7 @@ public class MineCommand implements CommandExecutor, TabCompleter {
 		if (sender instanceof Player && sender.hasPermission(ADMIN_PERMISSION)) {
 			if (args.length == 1) {
 				List<String> cmds = Arrays.asList("pos1", "pos2", "add", "addtypelist", "addentry", "removeentry",
-						"removetypelist", "build", "broker", "save", "remove", "reload", "regen");
+						"removetypelist", "build", "broker", "save", "remove", "reload", "regen", "list");
 				StringUtil.copyPartialMatches(args[0], cmds, completionList);
 			}
 			if (args.length == 2 && (args[0].equalsIgnoreCase("addtypelist") || args[0].equalsIgnoreCase("addentry")
@@ -286,6 +287,11 @@ public class MineCommand implements CommandExecutor, TabCompleter {
 					Bukkit.getPluginManager().disablePlugin(Main.getInstance());
 					Bukkit.getPluginManager().enablePlugin(Main.getInstance());
 					player.sendMessage("Plugin reloaded!");
+				} else if (args[0].equalsIgnoreCase("list")) {
+					sender.sendMessage(i18n("list_header"));
+					for (String entry : Main.getMineNames()) {
+						sender.sendMessage(ChatColor.GREEN + entry);
+					}
 				} else {
 					player.sendMessage(i18nonly("unknown_command"));
 				}
@@ -300,6 +306,7 @@ public class MineCommand implements CommandExecutor, TabCompleter {
 
 	public void sendHelp(Player player) {
 		player.sendMessage(i18nonly("help_title").replace("%version%", Main.getVersion()));
+		player.sendMessage(i18nonly("help_mine_list"));
 		player.sendMessage(i18nonly("help_mine_pos1"));
 		player.sendMessage(i18nonly("help_mine_pos2"));
 		player.sendMessage(i18nonly("help_mine_add"));
